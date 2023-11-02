@@ -1,0 +1,21 @@
+{
+    "name": "min-web-dev",
+    "author": {
+        "name": "Adam R Moss",
+        "email": "adamrmoss@gmail.com"
+    },
+    "description": "An example résumé developed as a minimalist website",
+    "version": "0.1.0",
+    "homepage": "https://github.com/adamrmoss/min-web-dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/adamrmoss/min-web-dev.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "serve": "14.x"
+    },
+    "scripts": {
+        "start": "npx serve public"
+    }
+}
