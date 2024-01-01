@@ -1,0 +1,59 @@
+@media screen
+{
+    #resume-header
+    {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: .25em;
+    }
+}
+
+@media print
+{
+    #resume-header
+    {
+        text-align: center;
+    }
+}
+
+#resume-heading
+{
+    background-color: #6a93a1;
+    color: #fff;
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: .25em;
+    width: 100%;
+}
+
+#resume-heading,
+#resume-tagline
+{
+    padding-top: .25em;
+    text-align: center;
+}
+
+#resume-tagline
+{
+    display: block;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+@media screen
+{
+    #resume-tagline
+    {
+        font-size: 1.25em;
+    }
+}
+
+@media print
+{
+    #resume-tagline
+    {
+        font-size: 1em;
+        margin-top: .25em;
+    }
+}
