@@ -1,0 +1,19 @@
+#education-table
+{
+    border-collapse: collapse;
+}
+
+#education-table td
+{
+    padding: .35em;
+}
+
+#education-table tr+tr td
+{
+    border-top: 1px solid #afafa8;
+}
+
+#education-table td+td
+{
+    border-left: 1px solid #afafa8;
+}
