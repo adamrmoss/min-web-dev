@@ -17,6 +17,7 @@
         "serve": "14.x"
     },
     "scripts": {
-        "start": "npx serve public"
+        "build": "npx sass sources/site.scss public/site.css",
+        "start": "npm run build && npx serve public"
     }
 }

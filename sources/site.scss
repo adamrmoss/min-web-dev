@@ -1,11 +1,9 @@
-*
-{
+* {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }
 
-body
-{
+body {
     background-color: #eeeee8;
     color: #111b1e;
     font-family: Georgia, serif;
@@ -45,3 +43,5 @@ b
 {
     white-space: nowrap;
 }
+
+@import 'header', 'section', 'education', 'technical-experience', 'work-history'
