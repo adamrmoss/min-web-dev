@@ -1,3 +1,5 @@
+@use 'palette';
+
 .resume-section
 {
     margin-top: .5in;
@@ -5,8 +7,8 @@
 
 .resume-section-title
 {
-    background-color: #d0d0c0;
-    border: 2px solid #afafa8;
+    background-color: palette.$light-very-desaturated-yellow;
+    border: 2px solid palette.$most-desaturated-yellow;
     font-size: 1em;
     padding: 5px;
 }

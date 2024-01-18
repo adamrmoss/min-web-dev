@@ -1,3 +1,5 @@
+@use 'palette';
+
 #education-table
 {
     border-collapse: collapse;
@@ -9,11 +11,11 @@
 
     tr+tr td
     {
-        border-top: 1px solid #afafa8;
+        border-top: 1px solid palette.$most-desaturated-yellow;
     }
 
     td+td
     {
-        border-left: 1px solid #afafa8;
+        border-left: 1px solid palette.$most-desaturated-yellow;
     }
 }

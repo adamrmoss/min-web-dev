@@ -1,3 +1,5 @@
+@use 'palette';
+
 #resume-header
 {
     @media screen
@@ -16,8 +18,8 @@
 
 #resume-heading
 {
-    background-color: #6a93a1;
-    color: #fff;
+    background-color: palette.$desaturated-cyan;
+    color: palette.$white;
     font-size: 3em;
     margin: 0;
     padding-bottom: .25em;
