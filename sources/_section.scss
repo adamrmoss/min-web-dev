@@ -1,4 +1,4 @@
-@use 'palette';
+@use 'palette' as *;
 
 .resume-section
 {
@@ -7,8 +7,8 @@
 
 .resume-section-title
 {
-    background-color: palette.$light-very-desaturated-yellow;
-    border: 2px solid palette.$most-desaturated-yellow;
+    background-color: $light-very-desaturated-yellow;
+    border: 2px solid $most-desaturated-yellow;
     font-size: 1em;
     padding: 5px;
 }

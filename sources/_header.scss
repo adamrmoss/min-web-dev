@@ -1,4 +1,4 @@
-@use 'palette';
+@use 'palette' as *;
 
 #resume-header
 {
@@ -18,8 +18,8 @@
 
 #resume-heading
 {
-    background-color: palette.$desaturated-cyan;
-    color: palette.$white;
+    background-color: $desaturated-cyan;
+    color: $white;
     font-size: 3em;
     margin: 0;
     padding-bottom: .25em;

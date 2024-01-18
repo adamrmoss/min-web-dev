@@ -1,21 +1,6 @@
-@use 'palette';
+@use 'tables' as *;
 
 #education-table
 {
-    border-collapse: collapse;
-
-    td
-    {
-        padding: .35em;
-    }
-
-    tr+tr td
-    {
-        border-top: 1px solid palette.$most-desaturated-yellow;
-    }
-
-    td+td
-    {
-        border-left: 1px solid palette.$most-desaturated-yellow;
-    }
+    @include interior-table;
 }

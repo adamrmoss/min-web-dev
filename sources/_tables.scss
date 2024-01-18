@@ -1,0 +1,23 @@
+@use 'palette' as *;
+
+$table-border: 1px solid $most-desaturated-yellow;
+
+@mixin interior-table
+{
+    border-collapse: collapse;
+
+    td
+    {
+        padding: .35em;
+    }
+
+    tr + tr td
+    {
+        border-top: $table-border;
+    }
+
+    td + td
+    {
+        border-left: $table-border;
+    }
+}

@@ -1,4 +1,4 @@
-@use 'palette';
+@use 'palette' as *;
 
 *
 {
@@ -8,8 +8,8 @@
 
 body
 {
-    background-color: palette.$very-light-very-desaturated-yellow;
-    color: palette.$very-dark-desaturated-cyan;
+    background-color: $very-light-very-desaturated-yellow;
+    color: $very-dark-desaturated-cyan;
     font-family: Georgia, serif;
     margin: auto;
     max-width: 1280px;
