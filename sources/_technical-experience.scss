@@ -8,21 +8,21 @@
 .technical-experience-table
 {
     border-collapse: collapse;
-}
 
-.technical-experience-table td
-{
-    padding: .35em;
-}
+    td
+    {
+        padding: .35em;
+    }
 
-.technical-experience-table tr+tr td
-{
-    border-top: 1px solid #afafa8;
-}
+    tr+tr td
+    {
+        border-top: 1px solid #afafa8;
+    }
 
-.technical-experience-table td+td
-{
-    border-left: 1px solid #afafa8;
+    td+td
+    {
+        border-left: 1px solid #afafa8;
+    }
 }
 
 .technical-experience-skill

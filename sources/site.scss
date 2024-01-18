@@ -1,28 +1,24 @@
-* {
+*
+{
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }
 
-body {
+body
+{
     background-color: #eeeee8;
     color: #111b1e;
     font-family: Georgia, serif;
     margin: auto;
     max-width: 1280px;
-}
 
-@media screen
-{
-    body
+    @media screen
     {
         font-size: 18px;
         padding: .5in;
     }
-}
 
-@media print
-{
-    body
+    @media print
     {
         font-size: 12px;
         padding: 0;
