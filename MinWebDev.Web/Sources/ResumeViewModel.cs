@@ -6,6 +6,9 @@ public class ResumeViewModel
     public required string CandidateTagline { get; set; }
 
     public required SchoolAttendance[] SchoolAttendances { get; set; }
-    public required SkillExperience[] SkillExperiences { get; set; }
+
+    public required SkillExperience[] SkillExperiencesPart1 { get; set; }
+    public required SkillExperience[] SkillExperiencesPart2 { get; set; }
+
     public required EmploymentTerm[] EmploymentTerms { get; set; }
 }

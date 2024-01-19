@@ -7,18 +7,15 @@
     <meta charset="utf-8" />
     <link rel="icon" href="./resume-icon.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Amir Lewis Resume" />
-    <title>Amir Lewis</title>
+    <meta name="description" content="@Model.CandidateName Resume" />
+    <title>@Model.CandidateName</title>
     <link href="./site.css" rel="stylesheet" />
 </head>
 
 <body>
     <header id="resume-header">
-        <h1 id="resume-heading">Amir Lewis</h1>
-        <i id="resume-tagline">
-            Enthusiastic <b>Full-Stack Web Developer</b> with a passion
-            for crafting elegant and efficient web solutions
-        </i>
+        <h1 id="resume-heading">@Model.CandidateName</h1>
+        <i id="resume-tagline">@Html.Raw(Model.CandidateTagline)</i>
     </header>
     <main>
         <section class="resume-section">
@@ -26,16 +23,9 @@
             <div class="resume-section-body">
                 <table id="education-table">
                     <tbody>
-                        <tr>
-                            <td>2020</td>
-                            <td>B.S. Computer Science</td>
-                            <td>Howard University</td>
-                        </tr>
-                        <tr>
-                            <td>2016</td>
-                            <td>High School Diploma</td>
-                            <td>North Atlanta High School</td>
-                        </tr>
+                        @foreach (var schoolAttendance in Model.SchoolAttendances) {
+                            @await Html.PartialAsync("_EducationTableRow.cshtml", schoolAttendance)
+                        }
                     </tbody>
                 </table>
             </div>
@@ -46,34 +36,22 @@
                 <div id="technical-experience-container">
                     <table class="technical-experience-table">
                         <tbody>
-                            <tr>
-                                <td>C++</td>
-                                <td>4 years</td>
-                            </tr>
-                            <tr>
-                                <td>C♯ / .NET</td>
-                                <td>2 years</td>
-                            </tr>
-                            <tr>
-                                <td>SQL Server</td>
-                                <td>2 years</td>
-                            </tr>
+                            @foreach (var skillExperience in Model.SkillExperiencesPart1) {
+                                <tr>
+                                    <td>@skillExperience.Skill</td>
+                                    <td>@skillExperience.Years years</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                     <table class="technical-experience-table">
                         <tbody>
-                            <tr>
-                                <td>Javascript / Typescript</td>
-                                <td>2 years</td>
-                            </tr>
-                            <tr>
-                                <td>HTML</td>
-                                <td>2 years</td>
-                            </tr>
-                            <tr>
-                                <td>React</td>
-                                <td>1 year</td>
-                            </tr>
+                            @foreach (var skillExperience in Model.SkillExperiencesPart2) {
+                                <tr>
+                                    <td>@skillExperience.Skill</td>
+                                    <td>@skillExperience.Years years</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

@@ -26,15 +26,33 @@ public class ResumeController : Controller
     private ResumeViewModel BuildViewModel()
     {
         var candidate = this.dao.GetCandidate();
-        var schoolAttendances = this.dao.GetSchoolAttendances();
-        var skillExperiences = this.dao.GetSkillExperiences();
-        var employmentTerms = this.dao.GetEmploymentTerms();
+
+        var schoolAttendances = this.dao.GetSchoolAttendances()
+            .OrderByDescending(sa => sa.GraduationYear)
+            .ToArray();
+
+        var skillExperiences = this.dao.GetSkillExperiences()
+            .OrderByDescending(se => se.Years)
+            .ToArray();
+
+        var skillExperiencesPart1 = skillExperiences
+            .Take((int) Math.Ceiling(skillExperiences.Length / 2.0))
+            .ToArray();
+
+        var skillExperiencesPart2 = skillExperiences
+            .Skip(skillExperiencesPart1.Length)
+            .ToArray();
+
+        var employmentTerms = this.dao.GetEmploymentTerms()
+            .OrderByDescending(et => et.StartDate)
+            .ToArray();
 
         return new ResumeViewModel {
             CandidateName = candidate.Name,
             CandidateTagline = candidate.Tagline,
             SchoolAttendances = schoolAttendances,
-            SkillExperiences = skillExperiences,
+            SkillExperiencesPart1 = skillExperiencesPart1,
+            SkillExperiencesPart2 = skillExperiencesPart2,
             EmploymentTerms = employmentTerms,
         };
     }
