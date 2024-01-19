@@ -68,7 +68,7 @@
                 {
                     <article class="work-history-item">
                         <header class="work-history-item-header">
-                            <div>@employmentTerm.StartDate.ToString("MMM yyyy") - @(employmentTerm.EndDate?.ToString("MMM yyyy") ?? "Present")</div>
+                            <div>@employmentTerm.StartDate.ToShortMonthYearString() - @employmentTerm.EndDate.ToShortMonthYearString()</div>
                             <div>@employmentTerm.JobTitle</div>
                             <div>@employmentTerm.Employer</div>
                         </header>
