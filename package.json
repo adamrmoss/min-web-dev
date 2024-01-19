@@ -13,11 +13,12 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "sass": "1.70.x",
-        "serve": "14.x"
+        "sass": "1.70.x"
     },
     "scripts": {
-        "build": "npx sass sources/site.scss public/site.css",
-        "start": "npm run build && npx serve public"
+        "build": "npm run build-sass && dotnet build min-web-dev.sln",
+        "build-sass": "npx sass MinWebDev.Web/Sources/site.scss MinWebDev.Web/wwwroot/site.css",
+        "publish": "npm run build-sass && dotnet publish MinWebDev.Web -o publish",
+        "start": "npm run build && dotnet run --project MinWebDev.Web"
     }
 }
