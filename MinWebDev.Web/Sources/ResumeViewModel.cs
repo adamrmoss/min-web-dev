@@ -1,6 +1,6 @@
-namespace WinWebDev;
+namespace MinWebDev.Web;
 
-public class ResumeModel
+public class ResumeViewModel
 {
     public required string CandidateName { get; set; }
     public required string CandidateTagline { get; set; }

@@ -1,7 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
+using MinWebDev.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IMinWebDevDao, MinWebDevDao>();
 
 var app = builder.Build();
 

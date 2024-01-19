@@ -1,4 +1,4 @@
-namespace WinWebDev;
+namespace MinWebDev;
 
 public class SkillExperience
 {
