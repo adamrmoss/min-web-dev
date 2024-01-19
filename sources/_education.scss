@@ -1,0 +1,6 @@
+@use 'tables' as *;
+
+#education-table
+{
+    @include interior-table;
+}

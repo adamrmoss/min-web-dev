@@ -1,17 +1,16 @@
-@media screen
+@use 'palette' as *;
+
+#resume-header
 {
-    #resume-header
+    @media screen
     {
         align-items: center;
         display: flex;
         flex-direction: column;
         row-gap: .25em;
     }
-}
 
-@media print
-{
-    #resume-header
+    @media print
     {
         text-align: center;
     }
@@ -19,8 +18,8 @@
 
 #resume-heading
 {
-    background-color: #6a93a1;
-    color: #fff;
+    background-color: $desaturated-cyan;
+    color: $white;
     font-size: 3em;
     margin: 0;
     padding-bottom: .25em;
@@ -39,19 +38,13 @@
     display: block;
     padding-left: 1.5em;
     padding-right: 1.5em;
-}
 
-@media screen
-{
-    #resume-tagline
+    @media screen
     {
         font-size: 1.25em;
     }
-}
 
-@media print
-{
-    #resume-tagline
+    @media print
     {
         font-size: 1em;
         margin-top: .25em;

@@ -1,0 +1,18 @@
+@use 'tables' as *;
+
+#technical-experience-container
+{
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-around;
+}
+
+.technical-experience-table
+{
+    @include interior-table;
+}
+
+.technical-experience-skill
+{
+    text-align: right;
+}

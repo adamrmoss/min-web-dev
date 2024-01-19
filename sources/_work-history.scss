@@ -1,3 +1,5 @@
+@use 'palette' as *;
+
 #work-history-grid
 {
     column-gap: 1.5em;
@@ -12,7 +14,7 @@
 
 .work-history-item
 {
-    border: 2px solid #afafa8;
+    border: 2px solid $most-desaturated-yellow;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
     display: inline-block;
@@ -21,8 +23,8 @@
 
 .work-history-item-header
 {
-    background-color: #deebef;
-    border-bottom: 1px solid #afafa8;
+    background-color: $very-light-desaturated-cyan;
+    border-bottom: 1px solid $most-desaturated-yellow;
     display: flex;
     font-size: .85em;
     gap: .15em;

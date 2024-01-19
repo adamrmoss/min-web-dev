@@ -1,3 +1,5 @@
+@use 'palette' as *;
+
 *
 {
     -webkit-print-color-adjust: exact;
@@ -6,25 +8,19 @@
 
 body
 {
-    background-color: #eeeee8;
-    color: #111b1e;
+    background-color: $very-light-very-desaturated-yellow;
+    color: $very-dark-desaturated-cyan;
     font-family: Georgia, serif;
     margin: auto;
     max-width: 1280px;
-}
 
-@media screen
-{
-    body
+    @media screen
     {
         font-size: 18px;
         padding: .5in;
     }
-}
 
-@media print
-{
-    body
+    @media print
     {
         font-size: 12px;
         padding: 0;
@@ -45,3 +41,9 @@ b
 {
     white-space: nowrap;
 }
+
+@import 'header';
+@import 'section';
+@import 'education';
+@import 'technical-experience';
+@import 'work-history';
