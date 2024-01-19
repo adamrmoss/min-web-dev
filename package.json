@@ -17,7 +17,7 @@
     },
     "scripts": {
         "build": "npm run build-sass && dotnet build min-web-dev.sln",
-        "build-sass": "npx sass MinWebDev.Web/Sources/site.scss MinWebDev.Web/wwwroot/site.css",
+        "build-sass": "npx sass MinWebDev.Web/Sources/Resume/resume.scss MinWebDev.Web/wwwroot/site.css",
         "publish": "npm run build-sass && dotnet publish MinWebDev.Web -o publish",
         "start": "npm run build && dotnet run --project MinWebDev.Web"
     }

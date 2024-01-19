@@ -3,6 +3,12 @@
         <ProjectReference Include="..\MinWebDev\MinWebDev.csproj" />
         <ProjectReference Include="..\MinWebDev.Data\MinWebDev.Data.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Sources\Resume\Education" />
+      <Folder Include="Sources\Resume\Header" />
+      <Folder Include="Sources\Resume\TechnicalExperience" />
+      <Folder Include="Sources\Resume\WorkHistory" />
+    </ItemGroup>
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>

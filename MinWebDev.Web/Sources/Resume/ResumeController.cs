@@ -20,7 +20,7 @@ public class ResumeController : Controller
     {
         var model = this.BuildViewModel();
 
-        return this.View("~/Sources/Resume.cshtml", model);
+        return this.View("~/Sources/Resume/Resume.cshtml", model);
     }
 
     private ResumeViewModel BuildViewModel()

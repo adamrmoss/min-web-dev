@@ -1,0 +1,92 @@
+﻿@model MinWebDev.Web.ResumeViewModel
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./resume-icon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="@Model.CandidateName Resume" />
+    <title>@Model.CandidateName</title>
+    <link href="./site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header id="resume-header">
+        <h1 id="resume-heading">@Model.CandidateName</h1>
+        <i id="resume-tagline">@Html.Raw(Model.CandidateTagline)</i>
+    </header>
+    <main>
+        <section class="resume-section">
+            <h2 class="resume-section-title">Education</h2>
+            <div class="resume-section-body">
+                <table id="education-table">
+                    <tbody>
+                        @foreach (var schoolAttendance in Model.SchoolAttendances) {
+                            <tr>
+                                <td>@schoolAttendance.GraduationYear</td>
+                                <td>@schoolAttendance.Degree</td>
+                                <td>@schoolAttendance.School</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="resume-section">
+            <h2 class="resume-section-title">Technical Experience</h2>
+            <div class="resume-section-body">
+                <div id="technical-experience-container">
+                    <table class="technical-experience-table">
+                        <tbody>
+                            @foreach (var skillExperience in Model.SkillExperiencesPart1) {
+                                <tr>
+                                    <td>@skillExperience.Skill</td>
+                                    <td>@skillExperience.Years years</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <table class="technical-experience-table">
+                        <tbody>
+                            @foreach (var skillExperience in Model.SkillExperiencesPart2) {
+                                <tr>
+                                    <td>@skillExperience.Skill</td>
+                                    <td>@skillExperience.Years years</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="resume-section">
+            <h2 class="resume-section-title">Work History</h2>
+            <div class="resume-section-body">
+                <div id="work-history-grid">
+                    @foreach (var employmentTerm in Model.EmploymentTerms)
+                    {
+                        <article class="work-history-item">
+                            <header class="work-history-item-header">
+                                <div>@employmentTerm.StartDate.ToString("MMM yyyy") - @(employmentTerm.EndDate?.ToString("MMM yyyy") ?? "Present")</div>
+                                <div>@employmentTerm.JobTitle</div>
+                                <div>@employmentTerm.Employer</div>
+                            </header>
+                            <ul class="work-history-item-body-details">
+                                @foreach (var bulletPoint in employmentTerm.BulletPoints)
+                                {
+                                    <li>
+                                        @Html.Raw(bulletPoint)
+                                    </li>
+                                }
+                            </ul>
+                        </article>
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
