@@ -24,11 +24,10 @@ public class ResumeSectionTagHelper : TagHelper
         sectionBody.InnerHtml.AppendHtml(innerContent);
 
         // Build section
-        var section1 = new TagBuilder("section");
-        section1.AddCssClass("resume-section");
-        section1.InnerHtml.AppendHtml(sectionTitleHeading);
-        section1.InnerHtml.AppendHtml(sectionBody);
-        var section = section1;
+        var section = new TagBuilder("section");
+        section.AddCssClass("resume-section");
+        section.InnerHtml.AppendHtml(sectionTitleHeading);
+        section.InnerHtml.AppendHtml(sectionBody);
 
         // Only render the section
         output.TagMode = TagMode.StartTagAndEndTag;

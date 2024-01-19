@@ -20,7 +20,7 @@ public class MinWebDevDao : IMinWebDevDao
             },
             new SchoolAttendance {
                 School = "Howard University",
-                Degree = "B.S. Computer Science",
+                Degree = "B.S. Computer Engineering",
                 GraduationYear = 2020
             },
         };
