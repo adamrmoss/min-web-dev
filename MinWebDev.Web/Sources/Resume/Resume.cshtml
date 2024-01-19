@@ -1,4 +1,8 @@
-﻿@model MinWebDev.Web.ResumeViewModel
+﻿@using MinWebDev.Web
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, MinWebDev.Web
+
+@model MinWebDev.Web.ResumeViewModel
 
 <!doctype html>
 <html lang="en">
@@ -18,74 +22,68 @@
         <i id="resume-tagline">@Html.Raw(Model.CandidateTagline)</i>
     </header>
     <main>
-        <section class="resume-section">
-            <h2 class="resume-section-title">Education</h2>
-            <div class="resume-section-body">
-                <table id="education-table">
+        <resume-section title="Education">
+            <table id="education-table">
+                <tbody>
+                    @foreach (var schoolAttendance in Model.SchoolAttendances)
+                    {
+                        <tr>
+                            <td>@schoolAttendance.GraduationYear</td>
+                            <td>@schoolAttendance.Degree</td>
+                            <td>@schoolAttendance.School</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </resume-section>
+        <resume-section title="Technical Experience">
+            <div id="technical-experience-container">
+                <table class="technical-experience-table">
                     <tbody>
-                        @foreach (var schoolAttendance in Model.SchoolAttendances) {
+                        @foreach (var skillExperience in Model.SkillExperiencesPart1)
+                        {
                             <tr>
-                                <td>@schoolAttendance.GraduationYear</td>
-                                <td>@schoolAttendance.Degree</td>
-                                <td>@schoolAttendance.School</td>
+                                <td>@skillExperience.Skill</td>
+                                <td>@skillExperience.Years years</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <table class="technical-experience-table">
+                    <tbody>
+                        @foreach (var skillExperience in Model.SkillExperiencesPart2)
+                        {
+                            <tr>
+                                <td>@skillExperience.Skill</td>
+                                <td>@skillExperience.Years years</td>
                             </tr>
                         }
                     </tbody>
                 </table>
             </div>
-        </section>
-        <section class="resume-section">
-            <h2 class="resume-section-title">Technical Experience</h2>
-            <div class="resume-section-body">
-                <div id="technical-experience-container">
-                    <table class="technical-experience-table">
-                        <tbody>
-                            @foreach (var skillExperience in Model.SkillExperiencesPart1) {
-                                <tr>
-                                    <td>@skillExperience.Skill</td>
-                                    <td>@skillExperience.Years years</td>
-                                </tr>
+        </resume-section>
+        <resume-section title="Work History">
+            <div id="work-history-grid">
+                @foreach (var employmentTerm in Model.EmploymentTerms)
+                {
+                    <article class="work-history-item">
+                        <header class="work-history-item-header">
+                            <div>@employmentTerm.StartDate.ToString("MMM yyyy") - @(employmentTerm.EndDate?.ToString("MMM yyyy") ?? "Present")</div>
+                            <div>@employmentTerm.JobTitle</div>
+                            <div>@employmentTerm.Employer</div>
+                        </header>
+                        <ul class="work-history-item-body-details">
+                            @foreach (var bulletPoint in employmentTerm.BulletPoints)
+                            {
+                                <li>
+                                    @Html.Raw(bulletPoint)
+                                </li>
                             }
-                        </tbody>
-                    </table>
-                    <table class="technical-experience-table">
-                        <tbody>
-                            @foreach (var skillExperience in Model.SkillExperiencesPart2) {
-                                <tr>
-                                    <td>@skillExperience.Skill</td>
-                                    <td>@skillExperience.Years years</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                        </ul>
+                    </article>
+                }
             </div>
-        </section>
-        <section class="resume-section">
-            <h2 class="resume-section-title">Work History</h2>
-            <div class="resume-section-body">
-                <div id="work-history-grid">
-                    @foreach (var employmentTerm in Model.EmploymentTerms)
-                    {
-                        <article class="work-history-item">
-                            <header class="work-history-item-header">
-                                <div>@employmentTerm.StartDate.ToString("MMM yyyy") - @(employmentTerm.EndDate?.ToString("MMM yyyy") ?? "Present")</div>
-                                <div>@employmentTerm.JobTitle</div>
-                                <div>@employmentTerm.Employer</div>
-                            </header>
-                            <ul class="work-history-item-body-details">
-                                @foreach (var bulletPoint in employmentTerm.BulletPoints)
-                                {
-                                    <li>
-                                        @Html.Raw(bulletPoint)
-                                    </li>
-                                }
-                            </ul>
-                        </article>
-                    }
-                </div>
-            </div>
-        </section>
+        </resume-section>
     </main>
 </body>
 
