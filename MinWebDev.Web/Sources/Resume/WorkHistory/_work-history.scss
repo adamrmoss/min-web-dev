@@ -27,15 +27,14 @@
     border-bottom: 1px solid $most-desaturated-orange;
     display: flex;
     font-size: .85em;
-    gap: .15em;
+    gap: 1em;
     justify-content: space-between;
     padding: .35em;
 }
 
 .work-history-item-term
 {
-    text-align: right;
-    width: 9em;
+    white-space: nowrap;
 }
 
 .work-history-item-body-details

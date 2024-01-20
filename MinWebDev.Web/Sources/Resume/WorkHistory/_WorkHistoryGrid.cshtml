@@ -7,7 +7,9 @@
     {
         <article class="work-history-item">
             <header class="work-history-item-header">
-                <div>@employmentTerm.StartDate.ToShortMonthYearString() - @employmentTerm.EndDate.ToShortMonthYearString()</div>
+                <div class="work-history-item-term">
+                    @employmentTerm.StartDate.ToShortMonthYearString() - @employmentTerm.EndDate.ToShortMonthYearString()
+                </div>
                 <div>@employmentTerm.JobTitle</div>
                 <div>@employmentTerm.Employer</div>
             </header>
