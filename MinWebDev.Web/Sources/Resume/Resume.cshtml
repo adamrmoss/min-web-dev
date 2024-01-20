@@ -24,16 +24,16 @@
     </header>
     <main>
         <resume-section title="Education">
-            @await Html.PartialAsync("_EducationTable.cshtml", Model.SchoolAttendances)
+            @await Html.PartialAsync("Education/_EducationTable.cshtml", Model.SchoolAttendances)
         </resume-section>
         <resume-section title="Technical Experience">
             <div id="technical-experience-container">
-                @await Html.PartialAsync("_TechnicalExperienceTable.cshtml", Model.SkillExperiencesPart1)
-                @await Html.PartialAsync("_TechnicalExperienceTable.cshtml", Model.SkillExperiencesPart2)
+                @await Html.PartialAsync("TechnicalExperience/_TechnicalExperienceTable.cshtml", Model.SkillExperiencesPart1)
+                @await Html.PartialAsync("TechnicalExperience/_TechnicalExperienceTable.cshtml", Model.SkillExperiencesPart2)
             </div>
         </resume-section>
         <resume-section title="Work History">
-            @await Html.PartialAsync("_WorkHistoryGrid.cshtml", Model.EmploymentTerms)
+            @await Html.PartialAsync("WorkHistory/_WorkHistoryGrid.cshtml", Model.EmploymentTerms)
         </resume-section>
     </main>
 </body>
