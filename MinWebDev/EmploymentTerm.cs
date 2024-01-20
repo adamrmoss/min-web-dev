@@ -2,6 +2,7 @@ namespace MinWebDev;
 
 public class EmploymentTerm
 {
+    private Guid Id { get; set; }
     public required string Employer { get; set; }
     public required DateTime StartDate { get; set; }
     public required DateTime? EndDate { get; set; }

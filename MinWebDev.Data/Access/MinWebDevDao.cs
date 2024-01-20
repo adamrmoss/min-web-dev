@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace MinWebDev.Data;
 
-public class MinWebDevDao : IMinWebDevDao
+public class MinWebDevDao : BaseDao, IMinWebDevDao
 {
+    public MinWebDevDao(MinWebDevDbContext dbContext)
+        : base(dbContext)
+    {
+    }
+    
     public Candidate GetCandidate()
     {
         return new Candidate {
