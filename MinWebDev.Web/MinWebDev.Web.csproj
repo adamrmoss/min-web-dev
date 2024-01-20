@@ -3,10 +3,20 @@
         <ProjectReference Include="..\MinWebDev\MinWebDev.csproj" />
         <ProjectReference Include="..\MinWebDev.Data\MinWebDev.Data.csproj" />
     </ItemGroup>
+
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
+
+    <Target Name="NpmInstall" Inputs="package.json" Outputs="node_modules/.install-stamp">
+        <Exec Command="npm install" />
+        <Touch Files="../node_modules/.install-stamp" AlwaysCreate="true" />
+    </Target>
+    
+    <Target Name="NpmRunBuildSass" DependsOnTargets="NpmInstall" BeforeTargets="BeforeBuild">
+        <Exec Command="npm run build-sass" />
+    </Target>
 </Project>
