@@ -13,7 +13,9 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "sass": "1.70.x"
+        "sass": "1.70.x",
+        "ts-node": "10.x",
+        "typescript": "5.x"
     },
     "scripts": {
         "build": "dotnet build min-web-dev.sln",
