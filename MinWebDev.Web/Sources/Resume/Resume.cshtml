@@ -24,18 +24,7 @@
     </header>
     <main>
         <resume-section title="Education">
-            <table id="education-table">
-                <tbody>
-                    @foreach (var schoolAttendance in Model.SchoolAttendances)
-                    {
-                        <tr>
-                            <td>@schoolAttendance.GraduationYear</td>
-                            <td>@schoolAttendance.Degree</td>
-                            <td>@schoolAttendance.School</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            @await Html.PartialAsync("_EducationTable.cshtml", Model.SchoolAttendances)
         </resume-section>
         <resume-section title="Technical Experience">
             <div id="technical-experience-container">
@@ -44,29 +33,9 @@
             </div>
         </resume-section>
         <resume-section title="Work History">
-            <div id="work-history-grid">
-                @foreach (var employmentTerm in Model.EmploymentTerms)
-                {
-                    <article class="work-history-item">
-                        <header class="work-history-item-header">
-                            <div>@employmentTerm.StartDate.ToShortMonthYearString() - @employmentTerm.EndDate.ToShortMonthYearString()</div>
-                            <div>@employmentTerm.JobTitle</div>
-                            <div>@employmentTerm.Employer</div>
-                        </header>
-                        <ul class="work-history-item-body-details">
-                            @foreach (var bulletPoint in employmentTerm.BulletPoints)
-                            {
-                                <li>
-                                    @Html.Raw(bulletPoint)
-                                </li>
-                            }
-                        </ul>
-                    </article>
-                }
-            </div>
+            @await Html.PartialAsync("_WorkHistoryGrid.cshtml", Model.EmploymentTerms)
         </resume-section>
     </main>
 </body>
 
 </html>
-
