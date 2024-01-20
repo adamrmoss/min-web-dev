@@ -1,49 +1,7 @@
-@use 'palette' as *;
-
-*
-{
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-}
-
-body
-{
-    background-color: $very-light-very-desaturated-yellow;
-    color: $very-dark-desaturated-cyan;
-    font-family: Georgia, serif;
-    margin: auto;
-    max-width: 1280px;
-
-    @media screen
-    {
-        font-size: 18px;
-        padding: .5in;
-    }
-
-    @media print
-    {
-        font-size: 12px;
-        padding: 0;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-b
-{
-    white-space: nowrap;
-}
-
+@import 'reset';
 @import 'header';
 @import 'section';
+
 @import 'Education/education';
 @import 'TechnicalExperience/technical-experience';
 @import 'WorkHistory/work-history';
