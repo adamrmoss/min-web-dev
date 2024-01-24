@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
 using MinWebDev.Data;
@@ -7,11 +6,21 @@ namespace MinWebDev.Web;
 
 public class ResumeController : Controller
 {
-    private readonly IMinWebDevDao dao;
+    private readonly ICandidateDao candidateDao;
+    private readonly ISchoolAttendanceDao schoolAttendanceDao;
+    private readonly ISkillExperienceDao skillExperienceDao;
+    private readonly IEmploymentTermDao employmentTermDao;
 
-    public ResumeController(IMinWebDevDao dao)
-    {
-        this.dao = dao;
+    public ResumeController(
+        ICandidateDao candidateDao,
+        ISchoolAttendanceDao schoolAttendanceDao,
+        ISkillExperienceDao skillExperienceDao,
+        IEmploymentTermDao employmentTermDao
+    ) {
+        this.candidateDao = candidateDao;
+        this.schoolAttendanceDao = schoolAttendanceDao;
+        this.skillExperienceDao = skillExperienceDao;
+        this.employmentTermDao = employmentTermDao;
     }
 
     [Route("")]
@@ -25,13 +34,13 @@ public class ResumeController : Controller
 
     private ResumeViewModel BuildViewModel()
     {
-        var candidate = this.dao.GetCandidate();
+        var candidate = this.candidateDao.GetCandidate();
 
-        var schoolAttendances = this.dao.GetSchoolAttendances()
+        var schoolAttendances = this.schoolAttendanceDao.GetSchoolAttendances()
             .OrderByDescending(sa => sa.GraduationYear)
             .ToArray();
 
-        var skillExperiences = this.dao.GetSkillExperiences()
+        var skillExperiences = this.skillExperienceDao.GetSkillExperiences()
             .OrderByDescending(se => se.Years)
             .ToArray();
 
@@ -43,7 +52,7 @@ public class ResumeController : Controller
             .Skip(skillExperiencesPart1.Length)
             .ToArray();
 
-        var employmentTerms = this.dao.GetEmploymentTerms()
+        var employmentTerms = this.employmentTermDao.GetEmploymentTerms()
             .OrderByDescending(et => et.StartDate)
             .ToArray();
 
