@@ -1,4 +1,4 @@
-namespace MinWebDev;
+namespace MinWebDev.Data;
 
 public class SchoolAttendance
 {

@@ -1,4 +1,4 @@
-namespace MinWebDev.Data;
+namespace MinWebDev;
 
 public interface IMinWebDevDao
 {

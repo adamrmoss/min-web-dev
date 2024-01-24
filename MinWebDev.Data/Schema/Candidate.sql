@@ -4,4 +4,7 @@ CREATE TABLE dbo.Candidate
     IdentityId BIGINT NOT NULL IDENTITY(1000, 1),
     [Name] NVARCHAR(64) NOT NULL,
     Tagline NVARCHAR(256) NOT NULL,
+
+    CONSTRAINT PK_Candidate PRIMARY KEY NONCLUSTERED (Id ASC),
+    CONSTRAINT UX_Candidate_IdentityId UNIQUE CLUSTERED (IdentityId ASC)
 );

@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+
+using MinWebDev;
 using MinWebDev.Data;
 
 var builder = WebApplication.CreateBuilder(args);
