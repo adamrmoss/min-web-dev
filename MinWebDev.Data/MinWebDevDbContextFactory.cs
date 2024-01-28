@@ -9,7 +9,7 @@ public class MinWebDevDbContextFactory : IDesignTimeDbContextFactory<MinWebDevDb
     public MinWebDevDbContext CreateDbContext(string[] args)
     {
         var config = new ConfigurationBuilder()
-            .AddJsonFile("database.json")
+            .AddJsonFile("dbsettings.json")
             .Build();
 
         var connectionString = config.GetConnectionString("DefaultConnection");

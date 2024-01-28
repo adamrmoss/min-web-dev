@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { glob } from 'glob'
 
-glob('**/sample.*settings.json')
+glob('**/sample.*settings.json', { ignore: '**/bin/**' })
     .then(sampleSettingsFilenames => {
         for (const sampleSettingsFilename of sampleSettingsFilenames)
         {
