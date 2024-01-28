@@ -57,8 +57,7 @@ public class ResumeController : Controller
             .ToArray();
 
         return new ResumeViewModel {
-            CandidateName = candidate.Name,
-            CandidateTagline = candidate.Tagline,
+            Candidate = candidate,
             SchoolAttendances = schoolAttendances,
             SkillExperiencesPart1 = skillExperiencesPart1,
             SkillExperiencesPart2 = skillExperiencesPart2,

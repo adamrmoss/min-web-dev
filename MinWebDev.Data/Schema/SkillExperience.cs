@@ -1,6 +1,6 @@
 namespace MinWebDev.Data;
 
-public class SkillExperience
+internal class SkillExperience
 {
     public required Guid Id { get; set; }
     public required string Skill { get; set; }

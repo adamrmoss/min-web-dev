@@ -1,6 +1,6 @@
 namespace MinWebDev.Data;
 
-public class EmploymentTerm
+internal class EmploymentTerm
 {
     public required Guid Id { get; set; }
     public required string Employer { get; set; }

@@ -1,6 +1,6 @@
 namespace MinWebDev.Data;
 
-public class SchoolAttendance
+internal class SchoolAttendance
 {
     public required Guid Id { get; set; }
     public required string School { get; set; }

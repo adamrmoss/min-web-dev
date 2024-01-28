@@ -12,16 +12,16 @@
     <meta charset="utf-8" />
     <link rel="icon" href="./resume-icon.png" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="@Model.CandidateName Resume" />
-    <title>@Model.CandidateName</title>
+    <meta name="description" content="@Model.Candidate.Name Resume" />
+    <title>@Model.Candidate.Name</title>
     <link href="./site.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="resume">
         <header id="resume-header">
-            <h1 id="resume-heading">@Model.CandidateName</h1>
-            <i id="resume-tagline">@Html.Raw(Model.CandidateTagline)</i>
+            <h1 id="resume-heading">@Model.Candidate.Name</h1>
+            <i id="resume-tagline">@Html.Raw(Model.Candidate.Tagline)</i>
         </header>
         <main>
             <resume-section title="Education">
