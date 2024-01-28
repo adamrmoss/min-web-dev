@@ -1,0 +1,6 @@
+{
+    "ConnectionStrings":
+    {
+        "DefaultConnection": "Data Source=[SQL_INSTANCE];Initial Catalog=[SQL_DATABASE];User Id=[SQL_USER];Password=[SQL_PASSWORD];Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;"
+    }
+}

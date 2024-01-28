@@ -6,8 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85D1F903-A1DB-44BC-A2C0-C3E8307AA111}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		README.md = README.md
 		LICENSE = LICENSE
+		README.md = README.md
+		initialize-settings.ts = initialize-settings.ts
 		package.json = package.json
 	EndProjectSection
 EndProject

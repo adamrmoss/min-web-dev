@@ -45,6 +45,10 @@ nupkg/
 # Visual Studio
 .vs/
 
+# Visual Studio Settings Files
+**/*settings.json
+!**/sample.*settings.json
+
 # User-specific files
 *.suo
 *.user

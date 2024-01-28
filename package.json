@@ -13,6 +13,8 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "fs": "x",
+        "glob": "10.3.x",
         "sass": "1.70.x",
         "ts-node": "10.x",
         "typescript": "5.x"
@@ -20,6 +22,7 @@
     "scripts": {
         "build": "dotnet build min-web-dev.sln",
         "build-sass": "npx sass MinWebDev.Web/Sources/Resume/resume.scss MinWebDev.Web/wwwroot/site.css",
+        "init-settings": "npx ts-node initialize-settings.ts",
         "publish": "dotnet publish MinWebDev.Web -o publish",
         "start": "npm run build && dotnet run --project MinWebDev.Web"
     }
