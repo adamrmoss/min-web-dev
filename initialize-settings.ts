@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { glob } from 'glob'
+import { glob } from 'glob';
 
 glob('**/sample.*settings.json', { ignore: '**/bin/**' })
     .then(sampleSettingsFilenames => {
