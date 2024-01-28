@@ -70,3 +70,6 @@ msbuild.wrn
 
 # Intelij Rider
 .idea
+
+# Microsoft Office Lock Files
+~$*

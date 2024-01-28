@@ -4,7 +4,7 @@ CREATE TABLE dbo.EmploymentTermBulletPoint
     IdentityId BIGINT NOT NULL IDENTITY(1000, 1),
     EmploymentTermId UNIQUEIDENTIFIER NOT NULL,
 
-    BulletPoint NVARCHAR(128) NOT NULL,
+    BulletPoint NVARCHAR(512) NOT NULL,
 
     CONSTRAINT PK_EmploymentTermBulletPoint PRIMARY KEY NONCLUSTERED (Id ASC),
     CONSTRAINT UX_EmploymentTermBulletPoint_IdentityId UNIQUE CLUSTERED (IdentityId ASC),
