@@ -22,10 +22,6 @@
     <ItemGroup>
         <ProjectReference Include="..\MinWebDev\MinWebDev.csproj" />
     </ItemGroup>
-    
-    <ItemGroup>
-        <Folder Include="Seeds" />
-    </ItemGroup>
 
     <ItemGroup>
         <None Remove="Migrations\Scripts\*.sql" />
