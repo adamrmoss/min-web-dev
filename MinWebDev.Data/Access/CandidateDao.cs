@@ -9,6 +9,8 @@ public class CandidateDao : BaseDao, ICandidateDao
     
     public MinWebDev.Candidate GetCandidate()
     {
+        // var candidate = this.dbContext.Candidates.FirstOrDefault();
+        
         return new MinWebDev.Candidate {
             Id = new Guid("4e1b3dde-5dcc-4816-9a51-f413b8506d33"),
             Name = "Amir Lewis",
