@@ -1,0 +1,5 @@
+DROP INDEX UX_CandidateEmploymentTermBulletPoint ON dbo.CandidateEmploymentTermBulletPoint;
+DROP VIEW dbo.CandidateEmploymentTermBulletPoint;
+
+DROP INDEX UX_CandidateEmploymentTermSkill ON dbo.CandidateEmploymentTermSkill;
+DROP VIEW dbo.CandidateEmploymentTermSkill;

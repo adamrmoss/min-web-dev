@@ -15,4 +15,7 @@ public class MinWebDevDbContext : DbContext
     internal DbSet<EmploymentTerm> EmploymentTerms { get; set; }
     internal DbSet<EmploymentTermSkill> EmploymentTermSkills { get; set; }
     internal DbSet<EmploymentTermBulletPoint> EmploymentTermBulletPoints { get; set; }
+    
+    internal DbSet<CandidateEmploymentTermSkill> CandidateEmploymentTermSkills { get; set; }
+    internal DbSet<CandidateEmploymentTermBulletPoint> CandidateEmploymentTermBulletPoints { get; set; }
 }

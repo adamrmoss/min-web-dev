@@ -9,7 +9,6 @@ public class SkillExperienceDao : BaseDao, ISkillExperienceDao
     
     public MinWebDev.SkillExperience[] GetSkillExperiences(Guid candidateId)
     {
-        
         var skillExperiences = this.dbContext.SkillExperiences
             .Where(sa => sa.CandidateId == candidateId)
             .OrderByDescending(sa => sa.Years)

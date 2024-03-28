@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MinWebDev.Data;
 
+[Table("SkillExperience")]
 internal class SkillExperience
 {
     public required Guid Id { get; set; }

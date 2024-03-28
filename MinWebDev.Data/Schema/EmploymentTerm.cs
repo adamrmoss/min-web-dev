@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MinWebDev.Data;
 
+[Table("EmploymentTerm")]
 internal class EmploymentTerm
 {
     public required Guid Id { get; set; }
