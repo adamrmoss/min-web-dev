@@ -1,4 +1,4 @@
-@use 'palette' as *;
+@use '../palette' as *;
 
 #work-history-grid
 {
@@ -14,7 +14,7 @@
 
 .work-history-item
 {
-    border: 2px solid $most-desaturated-yellow;
+    border: 2px solid $most-desaturated-orange;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
     display: inline-block;
@@ -24,18 +24,17 @@
 .work-history-item-header
 {
     background-color: $very-light-desaturated-cyan;
-    border-bottom: 1px solid $most-desaturated-yellow;
+    border-bottom: 1px solid $most-desaturated-orange;
     display: flex;
     font-size: .85em;
-    gap: .15em;
+    gap: 1em;
     justify-content: space-between;
     padding: .35em;
 }
 
 .work-history-item-term
 {
-    text-align: right;
-    width: 9em;
+    white-space: nowrap;
 }
 
 .work-history-item-body-details

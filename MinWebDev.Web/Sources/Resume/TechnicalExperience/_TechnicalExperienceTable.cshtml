@@ -1,0 +1,16 @@
+@using MinWebDev
+@using MinWebDev.Web
+
+@model MinWebDev.SkillExperience[]
+
+<table class="technical-experience-table">
+    <tbody>
+        @foreach (var skillExperience in Model)
+        {
+            <tr>
+                <td>@skillExperience.Skill</td>
+                <td>@skillExperience.Years years</td>
+            </tr>
+        }
+    </tbody>
+</table>

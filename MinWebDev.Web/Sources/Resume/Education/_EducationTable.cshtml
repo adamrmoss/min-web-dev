@@ -1,0 +1,14 @@
+@model MinWebDev.SchoolAttendance[]
+
+<table id="education-table">
+    <tbody>
+        @foreach (var schoolAttendance in Model)
+        {
+            <tr>
+                <td>@schoolAttendance.GraduationYear</td>
+                <td>@schoolAttendance.Degree</td>
+                <td>@schoolAttendance.School</td>
+            </tr>
+        }
+    </tbody>
+</table>

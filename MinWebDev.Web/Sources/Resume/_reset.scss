@@ -8,10 +8,16 @@
 
 body
 {
+    background-color: $very-dark-desaturated-cyan;
+}
+
+#resume
+{
     background-color: $very-light-very-desaturated-yellow;
     color: $very-dark-desaturated-cyan;
     font-family: Georgia, serif;
     margin: auto;
+    min-width: 1024px;
     max-width: 1280px;
 
     @media screen
@@ -41,9 +47,3 @@ b
 {
     white-space: nowrap;
 }
-
-@import 'header';
-@import 'section';
-@import 'education';
-@import 'technical-experience';
-@import 'work-history';

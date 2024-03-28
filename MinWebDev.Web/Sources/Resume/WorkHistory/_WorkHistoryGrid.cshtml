@@ -1,0 +1,28 @@
+@using MinWebDev.Web
+
+@model MinWebDev.EmploymentTerm[]
+
+<div id="work-history-grid">
+    @foreach (var employmentTerm in Model)
+    {
+        <article class="work-history-item">
+            <header class="work-history-item-header">
+                <div class="work-history-item-term">
+                    @employmentTerm.StartDate.ToShortMonthYearString() - @employmentTerm.EndDate.ToShortMonthYearString()
+                </div>
+                <div>@employmentTerm.JobTitle</div>
+                <div>@employmentTerm.Employer</div>
+            </header>
+            <ul class="work-history-item-body-details">
+                @foreach (var bulletPoint in employmentTerm.BulletPoints)
+                {
+                    <li>
+                        @Html.Raw(bulletPoint)
+                    </li>
+                }
+            </ul>
+        </article>
+    }
+</div>
+
+

@@ -6,7 +6,7 @@ logs
 *.log
 npm-debug.log*
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
+# Node Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Runtime data
@@ -15,10 +15,7 @@ pids
 *.seed
 *.pid.lock
 
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (https://nodejs.org/api/addons.html)
+# Node Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
@@ -35,3 +32,41 @@ node_modules/
 
 # Output of 'npm pack'
 *.tgz
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Nuget Packages
+nupkg/
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Pp]ublish/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Intelij Rider
+.idea
