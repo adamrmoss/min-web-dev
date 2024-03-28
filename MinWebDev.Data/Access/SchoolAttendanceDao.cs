@@ -7,21 +7,22 @@ public class SchoolAttendanceDao : BaseDao, ISchoolAttendanceDao
     {
     }
     
-    public MinWebDev.SchoolAttendance[] GetSchoolAttendances()
+    public MinWebDev.SchoolAttendance[] GetSchoolAttendances(Guid candidateId)
     {
-        return new[] {
-            new MinWebDev.SchoolAttendance {
-                Id = new Guid("391ca3c0-c07f-4572-a6db-e13dfe9ae163"),
-                School = "North Atlanta High School",
-                Degree = "High School Diploma",
-                GraduationYear = 2016
-            },
-            new MinWebDev.SchoolAttendance {
-                Id = new Guid("6382c3bb-f502-42f5-9fa0-ec0572724750"),
-                School = "Howard University",
-                Degree = "B.S. Computer Engineering",
-                GraduationYear = 2020
-            },
-        };
+        var schoolAttendances = this.dbContext.SchoolAttendances
+            .Where(sa => sa.CandidateId == candidateId)
+            .OrderBy(sa => sa.GraduationYear)
+            .ToArray();
+
+        return schoolAttendances
+            .Select(sa => new MinWebDev.SchoolAttendance
+            {
+                Id = sa.Id,
+                School = sa.School,
+                Degree = sa.Degree,
+                GraduationYear = sa.GraduationYear
+            })
+            .OrderByDescending(sa => sa.GraduationYear)
+            .ToArray();
     }
 }

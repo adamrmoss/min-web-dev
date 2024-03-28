@@ -2,5 +2,5 @@ namespace MinWebDev.Data;
 
 public interface ISchoolAttendanceDao
 {
-    MinWebDev.SchoolAttendance[] GetSchoolAttendances();
+    MinWebDev.SchoolAttendance[] GetSchoolAttendances(Guid candidateId);
 }

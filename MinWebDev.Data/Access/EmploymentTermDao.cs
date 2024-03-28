@@ -7,8 +7,13 @@ public class EmploymentTermDao : BaseDao, IEmploymentTermDao
     {
     }
 
-    public MinWebDev.EmploymentTerm[] GetEmploymentTerms()
+    public MinWebDev.EmploymentTerm[] GetEmploymentTerms(Guid candidateId)
     {
+        var employmentTerms = this.dbContext.EmploymentTerms
+            .Where(et => et.CandidateId == candidateId)
+            .ToArray();
+        
+        
         return new[] {
             new MinWebDev.EmploymentTerm {
                 Id = new Guid("168680ca-6ec3-47ab-989c-b9ec00fe357f"),

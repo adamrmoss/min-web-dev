@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MinWebDev.Data;
 
@@ -11,9 +12,11 @@ using MinWebDev.Data;
 namespace MinWebDev.Data.Migrations
 {
     [DbContext(typeof(MinWebDevDbContext))]
-    partial class MinWebDevDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240328031632_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +41,7 @@ namespace MinWebDev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candidates", (string)null);
+                    b.ToTable("Candidates");
                 });
 
             modelBuilder.Entity("MinWebDev.Data.EmploymentTerm", b =>
@@ -66,7 +69,7 @@ namespace MinWebDev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmploymentTerms", (string)null);
+                    b.ToTable("EmploymentTerms");
                 });
 
             modelBuilder.Entity("MinWebDev.Data.EmploymentTermBulletPoint", b =>
@@ -84,7 +87,7 @@ namespace MinWebDev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmploymentTermBulletPoints", (string)null);
+                    b.ToTable("EmploymentTermBulletPoints");
                 });
 
             modelBuilder.Entity("MinWebDev.Data.EmploymentTermSkill", b =>
@@ -102,7 +105,7 @@ namespace MinWebDev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmploymentTermSkills", (string)null);
+                    b.ToTable("EmploymentTermSkills");
                 });
 
             modelBuilder.Entity("MinWebDev.Data.SchoolAttendance", b =>
@@ -127,7 +130,7 @@ namespace MinWebDev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SchoolAttendances", (string)null);
+                    b.ToTable("SchoolAttendances");
                 });
 
             modelBuilder.Entity("MinWebDev.Data.SkillExperience", b =>
@@ -148,7 +151,7 @@ namespace MinWebDev.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SkillExperiences", (string)null);
+                    b.ToTable("SkillExperiences");
                 });
 #pragma warning restore 612, 618
         }

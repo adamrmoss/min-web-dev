@@ -36,13 +36,9 @@ public class ResumeController : Controller
     {
         var candidate = this.candidateDao.GetCandidate();
 
-        var schoolAttendances = this.schoolAttendanceDao.GetSchoolAttendances()
-            .OrderByDescending(sa => sa.GraduationYear)
-            .ToArray();
+        var schoolAttendances = this.schoolAttendanceDao.GetSchoolAttendances(candidate.Id);
 
-        var skillExperiences = this.skillExperienceDao.GetSkillExperiences()
-            .OrderByDescending(se => se.Years)
-            .ToArray();
+        var skillExperiences = this.skillExperienceDao.GetSkillExperiences(candidate.Id);
 
         var skillExperiencesPart1 = skillExperiences
             .Take((int) Math.Ceiling(skillExperiences.Length / 2.0))
@@ -52,9 +48,7 @@ public class ResumeController : Controller
             .Skip(skillExperiencesPart1.Length)
             .ToArray();
 
-        var employmentTerms = this.employmentTermDao.GetEmploymentTerms()
-            .OrderByDescending(et => et.StartDate)
-            .ToArray();
+        var employmentTerms = this.employmentTermDao.GetEmploymentTerms(candidate.Id);
 
         return new ResumeViewModel {
             Candidate = candidate,

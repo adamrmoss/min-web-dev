@@ -25,6 +25,8 @@
         "init-settings": "npx ts-node initialize-settings.ts",
         "publish": "dotnet publish MinWebDev.Web -o publish",
         "start": "npm run build && dotnet run --project MinWebDev.Web",
+        "add-migration": "dotnet ef migrations add --project MinWebDev.Data",
+        "remove-migration": "dotnet ef migrations remove --project MinWebDev.Data",
         "update-database": "dotnet ef database update --project MinWebDev.Data",
         "revert-database": "dotnet ef database update 0 --project MinWebDev.Data"
     }
