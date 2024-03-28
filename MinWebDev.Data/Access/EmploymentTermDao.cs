@@ -62,9 +62,9 @@ public class EmploymentTermDao : BaseDao, IEmploymentTermDao
                     "HTML",
                 },
                 BulletPoints = new[] {
-                    "Assisted senior engineers in electrical design and testing of power distribution systems",
-                    "Conducted research on energy efficiency and contributed to the development of sustainable energy solutions",
-                    "Gained hands-on experience in electrical engineering practices and safety standards",
+                    "Assisted in front-end and back-end development using React, Node.js, and MongoDB",
+                    "Engaged in Git-based version control, participated in code reviews, and used Jira for project management",
+                    "Contributed to the design and development of web applications, working closely with experienced developers",
                 },
             },
             new MinWebDev.EmploymentTerm {
